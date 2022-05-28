@@ -57,15 +57,4 @@ Cette commande produit le resultat suivant :
 Création d'un fichier .txt dans le dossier Results avec le meilleur investissment
 
 
- ###Génération Rapport Flake8
 
-Après avoir activé l'environnement virtuel, entrez la commande suivante:
-
-```shell
-flake8 --format=html --htmldir=flake_rapport
-
-flake8 --format=html --htmldir=flake_rapport --exclude venv
-
-```
-Un rapport sera généré dans le dossier "flake_rapport", avec comme argument 
-"max-line-length" défini par défaut à 79 caractères par ligne si non précisé.
