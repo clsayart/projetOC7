@@ -13,8 +13,8 @@ def write_report(choice, array_item, total_invest, benefice_report):
     with open(f'./results/{choice}.txt', 'xt') as result_file:
         result_file.write(f"\nActions to select for best return : \n\n"
                           f"{result_for_file}"
-                          f"\nTotal cost: {benefice_report:>6.2f} Euros \n"
-                          f"Total return: {total_invest:>6.2f} Euros\n\n")
+                          f"\nTotal cost: {total_invest:>6.2f} Euros \n"
+                          f"Total return: {benefice_report:>6.2f} Euros\n\n")
 
 
 def file_to_rows(filename):

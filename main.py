@@ -39,7 +39,7 @@ while not exit_algo_app:
                 print("Your choice must be 1, 2, 3 or 4")
 
         if choice_file == 1:
-            csv_file = 'files/actions_with_benefits.csv'
+            csv_file = 'files/dataset20actions.csv'
             run_algo_dynamic(csv_file)
         if choice_file == 2:
             csv_file = 'files/dataset1_Python+P7.csv'
