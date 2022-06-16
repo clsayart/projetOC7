@@ -5,18 +5,18 @@ from reports import file_to_rows, write_report
 def clean_values(array_rows):
     clean_rows_dyn = []
     for row in array_rows:
-        if float(row[1]) > 0 and float(row[2]) > 0:  # remove null or negative values
+        if float(row[1]) > 0: #and float(row[2]) > 0:  # remove null or negative values
             clean_rows_dyn.append((row[0], float(row[1]), float(row[2])))
     return clean_rows_dyn
 
 
 def benefice(actions_array):
-    print("actions_array[0], [1], len(actions_array)", actions_array[0], actions_array[1], len(actions_array))
+    # print("actions_array[0], [1], len(actions_array)", actions_array[0], actions_array[1], len(actions_array))
     benefice_un = []
     for i in actions_array:
-        ben = (int(i[1]) * int(i[2])) / 100
-        benefice_un.append([i[0], float(i[1]), round(ben, 1)])
-    print("benefice_un[0], [1], len(benefice_un)", benefice_un[0], benefice_un[1], len(benefice_un))
+        ben = (float(i[1]) * float(i[2])) / 100
+        benefice_un.append([i[0], float(i[1]), round(ben, 2)])
+    # print("benefice_un[0], [1], len(benefice_un)", benefice_un[0], benefice_un[1], len(benefice_un))
     return benefice_un
 
 
@@ -49,12 +49,20 @@ def run_algo_dynamic(csv_file):
     time_debut = time()
     array_rows = file_to_rows(csv_file)
     clean_rows_dyn = clean_values(array_rows)
+    # print("clean_rows_dyn", clean_rows_dyn)
     clean_rows_dyn_ben = benefice(clean_rows_dyn)
+    #result_algo_dyn print("clean_rows_dyn_ben", clean_rows_dyn_ben)
     result_algo_dyn = algo_dynamic(500, clean_rows_dyn_ben)
+    # diviser par 10
+    # print("result_algo_dyn 0", result_algo_dyn[0])
+    # print("result_algo_dyn 1", result_algo_dyn[1])
     total_cost = list(map(lambda x: x[1], result_algo_dyn[1]))
+    # back_to_500 = list(map(lambda x: x[2]/10, result_algo_dyn[1]))
+    # print("back_to_500", back_to_500)
+    # print("total_cost", total_cost)
     total_cost_list = list(total_cost)
     total_cost_deux = sum(total_cost_list)
-    write_report('optimized', result_algo_dyn[1], total_cost_deux, result_algo_dyn[0])
+    #write_report('optimized', result_algo_dyn[1], total_cost_deux, result_algo_dyn[0])
     time_fin = time() - time_debut
     print(f'Execution time : {time_fin} seconds\n'
           f'Return : {result_algo_dyn[0]} Euros\n'
