@@ -6,8 +6,8 @@ def benefice(actions_array):
     print("actions_array[0], [1], len(actions_array)", actions_array[0], actions_array[1], len(actions_array))
     benefice_un = []
     for i in actions_array:
-        ben = (int(i[1]) * int(i[2])) / 100
-        benefice_un.append([i[0], float(i[1]), round(ben, 2)])
+        ben = (float(i[1]) * float(i[2])) / 100
+        benefice_un.append([i[0], float(i[1]), ben])
     print("benefice_un[0], [1], len(benefice_un)", benefice_un[0], benefice_un[1], len(benefice_un))
     return benefice_un
 
