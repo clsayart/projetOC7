@@ -45,13 +45,11 @@ pip install -r requirements.txt
 ````
 ***
 ## Lancement du programme : 
-Exécution des algorithmes via 2 fichiers:
+Exécution des algorithmes via :
 ````shell
-python3 bruteforce.py 
+python3 main.py 
 ````
-````shell
-python3 optimized.py 
-````
+
 Cette commande produit le resultat suivant : 
 
 Création d'un fichier .txt dans le dossier Results avec le meilleur investissment
