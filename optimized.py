@@ -15,7 +15,6 @@ def benefice_dixieme(actions_array):
     for i in actions_array:
         ben = ((float(i[1])*10) * float(i[2])) / 100
         benefice_un.append([i[0], int(float(i[1]*10)), int(ben)])
-    print("benefice_un[0], [1], len(benefice_un)", benefice_un[0], benefice_un[1], len(benefice_un))
     return benefice_un
 
 
